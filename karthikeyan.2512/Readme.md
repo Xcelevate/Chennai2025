@@ -1,3 +1,2 @@
-
-                     This repository contains work done by Karthikeyan
+          This repository contains work done by Karthikeyan
                      
