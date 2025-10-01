@@ -1,0 +1,30 @@
+public class FCP019 {
+public static void main(String[] args)
+{
+float bill= 200f;
+if (bill<=50)
+{
+float a = 0.50*bill;
+float b = 0.2*bill;
+float c = a+b;
+System.out.println(c);
+}
+else if (bill<=150)
+{
+float a = 0.75*bill;
+float b = 0.2*bill;
+float c = a+b;
+}
+else if(bill <=250)
+{
+float a = 1.20*bill;
+float b = 0.2*bill;
+float c = a+b;
+}
+else{
+float a = 1.50*bill;
+float b = 0.2*bill;
+float c = a+b;
+}
+}
+}

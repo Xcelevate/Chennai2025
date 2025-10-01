@@ -1,0 +1,18 @@
+import java.util.*;
+public class fcp035{
+public static void main(String[]args){
+Scanner sc=new Scanner(System.in);
+int num=sc.nextInt();
+int i;
+for(i=1;i<=num;i++){
+if(num%1==0 && num%num==0){
+System.out.println("yes");
+break;
+}
+else
+{
+System.out.println("no");
+break;
+}
+}
+}
