@@ -1,3 +1,6 @@
+//Pascal’s Triangle
+
+
 import java.util.*;
 public class Fcp060{
    public static void main(String args[]){
@@ -19,3 +22,4 @@ public class Fcp060{
 	}
     }
 }
+
