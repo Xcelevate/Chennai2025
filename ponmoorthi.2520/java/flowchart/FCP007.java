@@ -1,7 +1,11 @@
 import java.util.*;
-public class FCP007{
-public static void main(String a[]){
-Scanner s=new Scanner(System.in);
-int c=s.nextInt();
-System.out.println(((c*9)/5)+32);
-}}
+public class FCP007
+{
+public static void main(String[]args)
+{
+Scanner sc=new Scanner(System.in);
+float c=sc.nextFloat();
+float ans= (float)((c*9)/5)+32;
+System.out.println(ans);
+}
+}

@@ -1,15 +1,14 @@
 import java.util.*;
-public class FCP001{
-public static void main(String[]args)
+public class FCP001
 {
-Scanner sc=new Scanner(System.in);
-int day=sc.nextInt();
-sc.nextLine();
-String month=sc.nextLine();
-int year=sc.nextInt();
-System.out.println(day);
-System.out.println(month);
-System.out.println(year);
+public static void main(String[]args)
+      {
+	Scanner sc=new Scanner(System.in);
+	int Date=sc.nextInt();
+	String Month=sc.next();
+	int Year=sc.nextInt();
+	System.out.println(Date);
+	System.out.println(Month);
+	System.out.println(Year);
+   }
 }
-}
-
