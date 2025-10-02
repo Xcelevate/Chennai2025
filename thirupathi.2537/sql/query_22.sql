@@ -1,0 +1,1 @@
+SELECT FIELD('A', 'A', 'B','C');

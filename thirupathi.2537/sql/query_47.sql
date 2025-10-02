@@ -1,0 +1,1 @@
+SELECT officeCode, city, phone FROM offices WHERE country IN('USA', 'France');

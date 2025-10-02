@@ -1,0 +1,1 @@
+SELECT lastName  as LNAME FROM employees;
