@@ -27,5 +27,5 @@ Notes from Day 1
 The print statement is used to output strings
 Strings are strings of characters
 String Concatenation is done with the + sign
-New lines can be created with a \ and the letter n
+New lines can be created with a \ and the letter n...Output
 
