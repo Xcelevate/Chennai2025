@@ -3,7 +3,13 @@ w=84
 bmi=w/h**2
 print(bmi)
 print(round(bmi),2)
-print(round(bmi,3))...I/p
+print(round(bmi,3))
+print(round(7.5))
+print(round(3.145678,-3))...I/p
 30.85399449035813
 31
-30.854..O/p
+30.854
+8
+0.0..O/p
+
+
