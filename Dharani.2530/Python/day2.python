@@ -1,0 +1,28 @@
+####randomization
+# randInt(a,b)
+import random
+randomInt = random.randint(1,10)
+print (randomInt) #0.8256571898313562
+
+### create .py file (ex.its_car)
+ carname="maruthi"
+# ### implement its_car
+import its_car
+its_car.carname #maruthi
+
+## random uniform
+randFloat = random.uniform(1,10)
+print (round(randFloat,2)) # 7.59
+
+## print head or tail randomly
+randbinary = random.randint(0,1)
+print(randbinary) # 1
+
+## print head or tail randomly
+randbinary = random.randint(0,1)
+if(randbinary==0):
+    print("head")
+else:
+    print("tail") #head
+
+
