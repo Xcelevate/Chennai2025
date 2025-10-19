@@ -1,0 +1,37 @@
+## print("Welcome to the tip calculator!")
+
+customer = input("What was the total bill (ma'am/sir)? $")
+
+#  check if customer input is a valid number (with or without decimal)
+a = customer.replace(".", "")
+
+if a.isdigit():
+    customer = float(customer)
+
+    if customer > 100:
+        tip = input("How much tip would you like to give? 10, 12, or 15? ")
+
+        if tip.isdigit():
+            tip = int(tip)
+
+            custt = input("How many people to split the bill? ")
+
+            if custt.isdigit():
+                custt = int(custt)
+
+                if custt < 20:
+                    tot_tip = customer * (tip / 100)
+                    total_cust_bill = customer + tot_tip
+                    bill_per_person = total_cust_bill / custt
+                    print(f"Each person should pay: $ {bill_per_person:.2f}")
+                    print("Thanks for the coming!!!")
+                else:
+                    print("Invalid split! Number of people should be less than 20.")
+            else:
+                print("Invalid input! Please enter a number for the people count.")
+        else:
+            print("Invalid input! Please enter a numeric tip value.")
+    else:
+        print("Your bill is less than $100, so you don’t need to pay a tip.")
+else:
+    print("Invalid input! Please enter a valid number for the bill.")

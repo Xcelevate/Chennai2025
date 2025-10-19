@@ -1,0 +1,1 @@
+SELECT lastname, firstname, jobtitle FROM employees WHERE officecode <= 4;

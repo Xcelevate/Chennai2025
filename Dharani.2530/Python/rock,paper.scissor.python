@@ -1,0 +1,34 @@
+import random
+
+computer = ["rock", "paper", "scissors"]
+
+print("Welcome to Rock🪨-Paper📰-Scissors✂ Game!")
+name = input("Hey player, enter your name here: ").lower()
+
+
+if name.isalpha():
+    user = input("Type 0 for rock, 1 for paper, or 2 for scissors: ")
+
+    if user.isdigit():
+        user = int(user)
+
+        if 0 <= user <= 2:
+            print(f"You chose: {computer[user]}")
+
+            compu = random.randint(0, 2)
+            print(f"Computer chose: {computer[compu]}")
+
+          
+            if user == compu:
+                print("It's a draw!🤝")
+            elif (user == 0 and compu == 2) or (user == 1 and compu == 0) or (user == 2 and compu == 1):
+                print(f"{name}, you are the winner! 🎉")
+            else:
+                print(f"Better luck next time, {name}! 👋")
+
+        else:
+            print("Please choose a number between 0 and 2 only.")
+    else:
+        print("Hey dude, don't use unwanted words❌. Type only 0, 1, or 2.")
+else:
+    print("I think your name contains symbols or numbers😅. Please enter letters only.")

@@ -1,0 +1,2 @@
+SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname  desc ,
+contactFirstname ASC ;

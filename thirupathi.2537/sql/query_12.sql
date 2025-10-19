@@ -1,0 +1,1 @@
+SELECT CONCAT('John',' ','Doe') AS 'Full Name';

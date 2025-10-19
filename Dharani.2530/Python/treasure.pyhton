@@ -1,0 +1,68 @@
+print("""
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     '"=.|                  |
+|___________________|__"=._o'"-._        '"=.______________|___________________
+          |                '"=._o'"=._      _'"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; '"=._o." ,-'''-,.
+|___________________|_._"  ,. .' ' '' ,  '"-._"-._   ". '__|___________________
+          |           |o'"=._' , "' '; .". ,  "-._"-._; ;              |
+ _________|___________| ;'-.o'"=._; ." ' ''."' . "-._ /_______________|_______
+|                   | |o;    '"-.o'"=._''  '' " ,__.--o;   |
+|___________________|_| ;     (#) '-.o '"=.'_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      '".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+""")
+print("Welcome to Treasure Island.")
+print("YOUR MISSION IS TO FIND THE GOLD.")
+
+name = input("Hey! dude, please enter your name here: ")
+
+# Check if input contains only alphabets
+if name.isalpha():
+    print(f"Welcome, {name}!")
+
+    start = input("Do you want to start the game (yes/no): ").lower()
+
+    if start == "yes":
+        print("You're at the cross road. Where do you want to go?")
+
+        start2 = input('Type "left" or "right": ').lower()
+
+        if start2 == "left":
+            print("You've come to a lake. There is an island in the middle of the lake 🏝️.")
+            start3 = input('Type "wait" to wait for a boat🚢 or "swim" to swim across 🏊‍♀️: ').lower()
+
+            if start3 == "wait":
+                print("You arrive at the island unharmed. There is a house with 3 doors🚪🚪🚪.")
+                start4 = input('One red🟥, one yellow🟨, and one blue🟦. Which colour do you choose? ').lower()
+
+                if start4 == "yellow":
+                    print(f"{name}, you found the treasure🪙!You Win🥳!")
+                elif start4 == "red":
+                    print("It's a room full of fire🔥. Game Over")
+                elif start4 == "blue":
+                    print("You enter a room of beasts👹. Game Over ")
+                else:
+                    print("You chose a door that doesn't exist🚪. Game Over.")
+            elif start3 == "swim":
+                print("You get attacked by an angry trout🐟. Game Over")
+            else:
+                print("Invalid choice. Game Over 😢.")
+        elif start2 == "right":
+            print("You fell into a hole. Game Over🕳️👩🏻‍🦯")
+        else:
+            print("Invalid choice. Game Over😢.")
+    elif start == "no":
+        print("Ohh okay, see you next time👋😊!")
+    else:
+        print("invalid input😢")
+else:
+    print("Invalid input! Please enter letters only (no numbers or symbols).")

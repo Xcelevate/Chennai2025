@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class FCP085{
+    public static void main(String[] args) {
+        Scanner ab = new Scanner(System.in);
+        int a = ab.nextInt();
+           int b = 0;
+        for (int i = 0; i <= a; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+                }
+                 for(int k = i-1;k>=1;k--){
+                   System.out.print(k);
+}
+            System.out.println();
+        }
+    }
+}
