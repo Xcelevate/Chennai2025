@@ -1,0 +1,21 @@
+SELECT lastName FROM employees;
+
+SELECT lastName as LNAME FROM employees;
+
+SELECT lastName as LNAME FROM employees EMP;
+
+SELECT lastName, firstName, jobTitle FROM employees;
+
+SELECT employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle FROM employees;
+
+SELECT * FROM employees;
+
+SELECT 1 + 1;
+
+SELECT NOW();
+
+SELECT CONCAT('John',' ','Doe');
+
+SELECT CONCAT('John',' ','Doe') AS name;
+
+SELECT CONCAT('John',' ','Doe') AS 'Full Name';
