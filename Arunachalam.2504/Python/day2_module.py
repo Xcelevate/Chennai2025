@@ -1,0 +1,1 @@
+friends=["moorthi","mani","aathif","vicky"]
