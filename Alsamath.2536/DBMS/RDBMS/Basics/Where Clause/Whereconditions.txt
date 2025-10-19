@@ -1,0 +1,53 @@
+SELECT lastname, firstname, jobtitle FROM employees WHERE jobtitle = 'Sales Rep';
+
+SELECT lastname, firstname, jobtitle, officeCode FROM employees WHERE jobtitle = 'Sales Rep' AND officeCode = 1;
+
+SELECT lastName, firstName, jobTitle, officeCode FROM employees WHERE jobtitle = 'Sales Rep' OR officeCode = 1 ORDER BY officeCode , jobTitle;
+
+SELECT firstName, lastName, officeCode FROM employees WHERE officeCode BETWEEN 1 AND 3 ORDER BY officeCode;
+
+SELECT firstName, lastName FROM employees WHERE lastName LIKE '%son' ORDER BY firstName;
+
+SELECT firstName, lastName FROM employees WHERE officeCode IN (1 , 2, 3) ORDER BY officeCode;
+
+SELECT firstName, lastName FROM employees WHERE reportsTo IS NULL;
+
+SELECT lastname, firstname, jobtitle FROM employees WHERE jobtitle <> 'Sales Rep';
+
+SELECT lastname, firstname, jobtitle FROM employees WHERE officecode > 5;
+
+SELECT lastname, firstname, jobtitle FROM employees WHERE officecode <= 4;
+
+SELECT lastname FROM employees ORDER BY lastname;
+
+SELECT DISTINCT lastname FROM employees ORDER BY lastname;
+
+SELECT DISTINCT state FROM customers;
+
+SELECT state, city FROM customers WHERE state IS NOT NULL ORDER BY state , city;
+
+SELECT DISTINCT state, city FROM customers WHERE state IS NOT NULL ORDER BY state , city;
+
+SELECT customername, country, state FROM customers WHERE country = 'USA' AND state = 'CA';
+
+SELECT customername, country, state, creditlimit FROM customers WHERE country = 'USA' AND state = 'CA' AND creditlimit > 100000;
+
+SELECT customername, country FROM customers WHERE country = 'USA' OR country = 'France';
+
+SELECT customername, country, creditLimit FROM customers WHERE(country = 'USA' OR country = 'France') AND creditlimit > 100000;
+
+SELECT customername, country, creditLimit FROM customers WHERE country = 'USA' OR country = 'France' AND creditlimit > 100000;
+
+SELECT officeCode, city, phone FROM offices WHERE country IN('USA', 'France');
+
+SELECT officeCode, city, phone FROM offices WHERE country = 'USA' OR country = 'France';
+
+SELECT officeCode, city, phone FROM offices WHERE country NOT IN('USA', 'France');
+
+SELECT productCode, productName, buyPrice FROM products WHERE buyPrice BETWEEN 90 AND 100;
+
+SELECT productCode, productName, buyPrice FROM products WHERE buyPrice >= 90 AND buyPrice <= 100;
+
+SELECT productCode, productName, buyPrice FROM products WHERE buyPrice NOT BETWEEN 20 AND 100;
+
+SELECT productCode, productName, buyPrice FROM products WHERE buyPrice < 20 OR buyPrice > 100;
