@@ -1,0 +1,27 @@
+SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname;
+
+SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname desc;
+
+SELECT contactLastname, contactFirstname FROM customers ORDER BY contactLastname desc, contactFirstname ASC;
+
+SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
+
+SELECT orderNumber, orderLineNumber, quantityOrdered * priceEach AS subtotal FROM orderdetails ORDER BY subtotal DESC;
+
+SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails;
+
+SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
+
+SELECT orderNumber, orderlinenumber FROM orderdetails ORDER BY quantityOrdered * priceEach DESC;
+
+SELECT orderNumber, orderlinenumber, quantityOrdered * priceEach FROM orderdetails order by quantityOrdered + priceEach;
+
+SELECT FIELD('A', 'A', 'B','C');
+
+SELECT orderNumber, status FROM orders ORDER BY FIELD(status, 'In Process', 'On Hold', ‘Cancelled', 'Resolved', 'Disputed', 'Shipped');
+
+SELECT orderNumber, status FROM orders ORDER BY FIELD(status, 'In Process', 'On Hold', 'Cancelled', 'Shipped');
+
+SELECT firstName, lastName, reportsTo FROM employees ORDER BY reportsTo;
+
+SELECT firstName, lastName, reportsTo FROM employees ORDER BY reportsTo DESC;
