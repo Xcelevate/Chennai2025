@@ -1,0 +1,44 @@
+SELECT lastName, firstName FROM employees WHERE officeCode IN(SELECT officeCode FROM offices WHERE country = 'USA');
+
+SELECT customerNumber, checkNumber, amount FROM payments WHERE amount =(SELECT MAX(amount) FROM payments);
+
+SELECT customerNumber, checkNumber, amount FROM payments WHERE amount >(SELECT AVG(amount) FROM payments);
+
+Find the customers who have not placed any orders:
+SELECT customerName FROM customers WHERE customerNumber NOT IN(SELECT DISTINCT customerNumber FROM orders);
+
+Find the maximum, minimum, and average number of items in sale orders: 
+SELECT MAX(items), MIN(items), FLOOR(AVG(items)) FROM(SELECT orderNumber, COUNT(orderNumber) AS items FROM orderdetails GROUP BY orderNumber) AS lineitems;
+
+Select products whose buy prices are greater than the average buy price of all products in each product line 
+SELECT productname, buyprice FROM products p1 WHERE buyprice >(SELECT AVG(buyprice) FROM products WHERE productline = p1.productline);
+
+Find customers who placed at least one sales order with a total value greater than 60K
+SELECT customerNumber, customerName FROM customers WHERE EXISTS( SELECT orderNumber, SUM(priceEach * quantityOrdered) FROM orderdetails INNER JOIN orders USING(orderNumber) WHERE customerNumber = customers.customerNumber GROUP BY orderNumber HAVING SUM(priceEach * quantityOrdered) > 60000);
+
+Find customers who placed more than four orders:
+SELECT customerName, COUNT(*) order_count FROM orders INNER JOIN customers using(customerNumber) GROUP BY customerName HAVING COUNT(*) > 4 ORDER BY order_count;
+
+Find the sale value of each product 
+SELECT productName, sales FROM(SELECT productCode, ROUND(SUM(quantityOrdered * priceEach)) sales FROM orderdetails INNER JOIN orders USING (orderNumber) WHERE YEAR(shippedDate) = 2003 GROUP BY productCode ORDER BY sales DESC LIMIT 5) top5products2003 INNER JOIN products USING (productCode);
+
+Classify the customers who bought products in 2003 into 3 groups: platinum, gold, and silver. specify the number of customers in each group with the following conditions:
+•
+Platinum customers who have orders with a volume greater than 100K.
+•
+Gold customers who have orders with a volume between 10K and 100K.
+•
+Silver customers who have orders with a volume of less than 10K.
+SELECT customerGroup, COUNT(cg.customerGroup) AS groupCount FROM(SELECT customerNumber, ROUND(SUM(quantityOrdered * priceEach)) sales, (CASE WHEN SUM(quantityOrdered * priceEach) < 10000 THEN 'Silver' WHEN SUM(quantityOrdered * priceEach) BETWEEN 10000 AND 100000 THEN 'Gold' WHEN SUM(quantityOrdered * priceEach) > 100000 THEN 'Platinum' END) customerGroup FROM orderdetails INNER JOIN orders USING (orderNumber) WHERE YEAR(shippedDate) = 2003 GROUP BY customerNumber) cg GROUP BY cg.customerGroup;
+
+Find the customers who have at least one order:
+SELECT customerNumber, customerName FROM customers WHERE EXISTS( SELECT 1 FROM orders WHERE orders.customernumber = customers.customernumber);
+
+Find the customers who have at least one order: 
+SELECT customerNumber, customerName FROM customers WHERE customerNumber IN( SELECT customerNumber FROM orders);
+
+Find the customers who have no orders:
+SELECT customerNumber, customerName FROM customers WHERE NOT EXISTS( SELECT 1 FROM orders WHERE orders.customernumber = customers.customernumber);
+
+Find employees who work at the office in San Franciso:
+SELECT employeenumber, firstname, lastname, extension FROM employees WHERE EXISTS( SELECT 1 FROM offices WHERE city = 'San Francisco' AND offices.officeCode = employees.officeCode);
