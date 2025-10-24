@@ -1,0 +1,26 @@
+Find customers who are not employees:
+SELECT firstName FROM employees EXCEPT SELECT contactFirstName FROM customers;
+
+Find customers who are not employees and order their names:
+SELECT firstName FROM employees EXCEPT SELECT contactFirstName FROM customers ORDER BY firstName;
+
+Find customers who are not employees and order their names with repetition if present:
+SELECT firstName FROM employees EXCEPT ALL SELECT contactFirstName FROM customers ORDER BY firstName;
+
+Find customers who are also employees:
+SELECT firstName FROM employees INTERSECT SELECT contactFirstName FROM customers;
+
+Find customers who are also employees and order their names:
+SELECT firstName FROM employees INTERSECT SELECT contactFirstName FROM customers ORDER BY firstName;
+
+Find customers who are also employees and order their names with repetition if present:
+SELECT firstName FROM employees INTERSECT ALL SELECT contactFirstName FROM customers ORDER BY firstName;
+
+Find consolidated list of customers and employees:
+SELECT firstName FROM employees UNION SELECT contactFirstName FROM customers;
+
+Find consolidated list of customers and employees and order their names:
+SELECT firstName FROM employees UNION SELECT contactFirstName FROM customers ORDER BY firstName;
+
+Find consolidated list of customers and employees and order their names with repetition if present:
+SELECT firstName FROM employees UNION ALL SELECT contactFirstName FROM customers ORDER BY firstName;
