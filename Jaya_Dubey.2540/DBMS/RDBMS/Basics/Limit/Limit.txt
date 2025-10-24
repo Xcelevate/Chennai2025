@@ -1,0 +1,9 @@
+SELECT customerNumber, customerName, creditLimit FROM customers ORDER BY creditLimit DESC LIMIT 5;
+
+SELECT customerNumber, customerName, creditLimit FROM customers ORDER BY creditLimit LIMIT 5;
+
+SELECT customerNumber, customerName, creditLimit FROM customers ORDER BY creditLimit, customerNumber LIMIT 5;
+
+SELECT customerNumber, customerName FROM customers ORDER BY customerName LIMIT 10;
+
+SELECT customerNumber, customerName FROM customers ORDER BY customerName LIMIT 5, 2;
