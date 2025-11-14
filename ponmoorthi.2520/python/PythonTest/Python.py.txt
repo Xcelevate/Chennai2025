@@ -1,0 +1,27 @@
+
+1.Custom Exception
+
+class NegativeValueError(ValueError):
+    pass
+    
+def validate_positive(value):
+    if value < 0:
+        raise NegativeValueError("Input value is negative")
+    else:
+        return value
+
+
+2.Anagram Intrusion Detector
+
+def group_anagrams(input_list):
+    anagram = {}
+    
+    for word in input_list:
+        sort = ''.join(sorted(word))
+        
+        if sort in anagram:
+            anagram[sort].append(word)
+        else:
+            anagram[sort] = [word]
+    
+    return list(anagram.values())
