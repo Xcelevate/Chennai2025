@@ -1,0 +1,33 @@
+
+Coding Questions
+1. Load and Inspect the Data
+a) Read the CSV into a Pandas DataFrame and display the first 5 rows.
+b) Display the number of missing values for each column.
+2. Missing Values
+a) Fill missing Region and SalesRep values with the string "Unknown".
+b) For missing PaymentMethod, fill with the mode method.
+3. Duplicates
+a) Count the number of duplicate rows in the dataset.
+b) Drop complete duplicates and reset the DataFrame index.
+4. Text Cleaning and Standardization
+a) Remove leading/trailing spaces and set the 'Product' names to proper case (e.g., "Phone").
+b) Standardize 'Region' to title case (e.g., "North")
+ 
+5. Outlier Identification & Treatment
+a) Calculate mean and standard deviation of Quantity. Identify rows where Quantity is more than
+3 std deviations above the mean.
+b) Replace these outlier Quantity values with the median Quantity for their 'Product' group.6. Feature Engineering
+a) Extract the month and year from the Date column into new columns.
+b) Flag orders larger than the 95th percentile of TotalAmount with a boolean 'HighValue' column.
+7. Aggregations & Grouping
+a) Compute total and average revenue per Region and Product combination.
+b) For each month, show the best-selling product by total quantity.
+8. Pivot and Reshape
+a) Create a pivot table with Region as rows, Product as columns, and sum of TotalAmount as
+values.
+9. SalesRep Analytics
+a) Which SalesRep handled the highest revenue overall? Show their total revenue.
+b) List the top 3 SalesReps by total orders handled each.
+10. Export the Cleaned Data
+Save the fully cleaned and engineered DataFrame to sales_data_cleaned.csv.
+ 
