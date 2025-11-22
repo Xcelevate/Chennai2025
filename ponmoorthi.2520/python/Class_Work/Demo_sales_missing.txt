@@ -1,0 +1,72 @@
+
+### Sales missing data
+
+Correct the data set by filing the missing Values. Based on the class notes.
+Steps:
+Identification Display the count of missing values for each column in the dataset.
+
+Imputation (Categorical Columns) Fill missing values in the each column.
+
+Fill missing values in dataset with the most frequent value for that column in the data.
+
+Imputation (Numerical Columns) If numeric column have any missing values, fill them with their respective column means/median.
+
+import pandas as pd
+
+df=pd.read_csv("demo_sales_missing.csv")
+
+add=0
+c=0
+
+for i in df["Quantity"]:
+    print(str(i))
+    if isinstance(i,float):
+        print("Inside if")
+        add+=i
+        c+=1
+        
+    else:
+        print("inside else")
+        continue
+		
+add
+
+c
+
+df['Quantity'].fillna(df['Quantity'].mean(), inplace=True)
+df['TotalAmount'].fillna(df['TotalAmount'].mean(), inplace=True)
+
+df=df.replace(to_replace="NaN",value="Charlie")
+
+df 
+
+
+most_region=df['Region'].mode()[0]
+df['Region']=df['Region'].fillna(most_region)
+
+df.describe()
+
+percentile = (4.75 /8 ) * 100
+
+percentile
+
+most_product=df['Product'].mode()[0]
+df['Product']=df['Product'].fillna(most_product)
+
+most_sales=df['SalesRep'].mode()[0]
+df['SalesRep']=df['SalesRep'].fillna(most_sales)
+
+df
+
+most_payment=df['PaymentMethod'].mode()[0]
+df['PaymentMethod']=df['PaymentMethod'].fillna(most_payment)
+
+df
+
+import math
+ 
+x = float('nan')
+y = 10.0
+ 
+print(f"Is x NaN? {math.isnan(x)}")  # Output: Is x NaN? True
+print(f"Is y NaN? {math.isnan(y)}")  # Output: Is y NaN? False
