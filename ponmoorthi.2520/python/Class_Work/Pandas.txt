@@ -1,0 +1,46 @@
+PANDAS
+
+import pandas as pd
+df=pd.read_csv('car.csv')
+print(df.to_string())
+
+print(pd.options.display.max_rows)
+
+print(pd.options.display.min_rows)
+
+df1=df.sample(n=10,random_state=1)
+
+print(df1)
+
+print(df1.to_excel)
+
+dates=['02-03-2024','04-09-2024']
+df1=df.sample(n=2,random_state=1)
+df1['datesPurchased']=dates
+print(df1.to_string())
+
+
+dates=["10-06-2001","12-10-2002","24-04-2004","31-05-2008","12-06-2000","21-03-2003","14-11-2001","18-06-2000","25-09-2005","18-08-2002"]
+df1=df.sample(n=10,random_state=1)
+print(df1)
+
+df1['datePurchased']=dates;
+print(df1.to_string())
+
+df1.to_excel("output.xlsx")
+
+data={ 
+    "calories":[420,388,390],
+    "duration":[50,40,45]
+}
+df=pd.DataFrame(data)
+print(df)
+
+
+
+print(df.loc[0])
+
+print(df.iloc[0:1,0:1])
+
+df.to_json(orient='split')
+

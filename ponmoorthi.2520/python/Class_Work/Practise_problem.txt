@@ -1,0 +1,29 @@
+class Book:
+
+    def _init_(self,book_name,author_name,book_id,available_copies,copies): 
+        self.book_name=book_name
+        self.author_name=author_name
+        self.book_id=book_id
+        self.available_copies=available_copies
+        self.copies=copies
+        
+    def borrowBook(self):       #instance method1
+        if self.available_copies > 0: 
+            self.available_copies -= 1 
+            return f"Borrowed '{self.book_name}' successfully! Copies left: {self.available_copies}"
+        else:
+            return f"Sorry, '{self.title}' is currently unavailable."
+
+    def return_book(self):     #instance method2
+        if self.copes> self.available_copies:
+            self.available_copies +=1
+            return f"return {self.book_name} successfully! copies available:{self.available_copies}"
+        else:
+            return f"All copies is available,{self.available_copies}"
+
+    def diplay_info(self):     #instance method3
+        print(f"Book name: {self.book_name}")
+        print(f"Book author name: {self.author_name}")
+        print(f"Book id: {self.book_id}")  
+        print(f"Book available copies: {self.available_copies}")
+        print(f"Book copies: {self.copies}")

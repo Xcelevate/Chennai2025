@@ -1,0 +1,83 @@
+
+
+
+##Book Problem
+
+class InvalidCopiesError(Exception):
+    pass
+
+class OutOfStockError(Exception):
+    pass
+
+
+class Book:
+    def __init__(self,title,author,copies):
+        self.title=title
+        self.author=author
+        self.copies=copies
+        
+    @property
+    def copies(self):
+        return self.copies
+
+    @copies.setter
+    def copies(self,value):
+        if value <0:
+            raise InvalidCopiesError("Copies cannot be set to negative numbers")
+            self._copies=value
+class LibraryBook(Book):
+    def __init__(self,title,author,copies):
+        super().__init__(title,author,copies)
+        self.borrowed=0
+
+    
+    def borrow_book(self):
+        if self.borrow>0:
+            self.borrwed+=1
+            print("Borrowed copies is increased")
+        else:
+            raise OutOfStockError("It is out of stock")
+
+
+    def return_book(self):
+        if self.borrowed>0:
+            self.borrowed-=1
+        else:
+            print("No copies return")
+			
+
+
+l_b=LibraryBook("Java OOPS","John",90)
+try:
+    l_b.copies=-89
+except OutOfStockError as s:
+    print(s)
+except InvalidCopiesError as c:
+    print(c)
+
+    
+    
+	
+class Booknotavailable(Exception):
+    pass
+class Mybook:
+    def __init__(self,title,copies):
+        self.title=title
+        self.copies=copies
+    @property
+    def copies(self):
+        return self.copies
+        
+    @copies.setter
+    def copies(self,value):
+        if value<0:
+            raise Booknotavailable("Book is less then zero")
+            self.copies = value
+        
+		
+m=Mybook("Python OOPS",87)
+
+try:
+    m.copies=-678
+except Booknotavailable as b:
+    print(b)
