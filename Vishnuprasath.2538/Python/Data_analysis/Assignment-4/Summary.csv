@@ -1,0 +1,7 @@
+Region,Revenue,Revenue,Revenue,Quantity,Quantity,TransactionID
+,sum,mean,count,sum,mean,count
+Central,686469,19068.58,36,1031,28.64,36
+East,514120,11956.28,43,1080,25.12,43
+North,674732,16065.05,42,1168,27.81,42
+South,667313,15518.91,43,1187,27.6,43
+West,497216,13811.56,36,784,21.78,36
