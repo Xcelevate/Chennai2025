@@ -1,0 +1,151 @@
+OrderID,OrderDate,CustomerName,OrderStatus,ProductCategory,ItemQuantity,ItemPrice,ShippingCost,DiscountApplied,PaymentMethod,TotalAmount
+10001,12/7/2024,Cust_1,Shipped,Electronics,15,265,0,0,UPI,3975
+10002,7/12/2024,Cust_2,Shipped,Books,3,471,5,10,PayPal,1408
+10003,6/10/2024,Cust_3,Pending,Home,19,236,5,10,Debit Card,4479
+10004,12/12/2024,Cust_4,Shipped,Electronics,18,245,15,20,PayPal,4405
+10005,12/26/2024,Cust_5,Cancelled,Home,8,370,0,5,UPI,2955
+10006,9/13/2024,Cust_6,Cancelled,Books,17,389,10,5,UPI,6618
+10007,3/12/2024,Cust_7,Shipped,Electronics,8,464,15,20,UPI,3707
+10008,3/27/2024,Cust_8,Shipped,Books,7,498,10,5,Debit Card,3491
+10009,9/18/2024,Cust_9,Cancelled,Electronics,7,22,15,15,PayPal,154
+10010,8/1/2024,Cust_10,Completed,Clothing,3,219,5,0,PayPal,662
+10011,6/1/2024,Cust_11,Cancelled,Electronics,1,238,15,10,UPI,243
+10012,7/28/2024,Cust_12,Cancelled,Home,4,406,5,0,PayPal,1629
+10013,3/1/2024,Cust_13,Shipped,Electronics,5,109,15,10,Credit Card,550
+10014,9/24/2024,Cust_14,Cancelled,Books,1,40,0,15,Credit Card,25
+10015,9/18/2024,Cust_15,Shipped,Books,15,395,10,5,Credit Card,5930
+10016,8/5/2024,Cust_16,Shipped,Electronics,5,25,0,20,PayPal,105
+10017,10/9/2024,Cust_17,Pending,Home,13,146,15,15,Debit Card,1898
+10018,5/15/2024,Cust_18,Cancelled,Clothing,8,338,15,0,Debit Card,2719
+10019,12/27/2024,Cust_19,Completed,Home,8,175,15,20,Debit Card,1395
+10020,4/2/2024,Cust_20,Pending,Clothing,5,468,5,5,Debit Card,2340
+10021,4/18/2024,Cust_21,Shipped,Books,9,319,10,15,Credit Card,2866
+10022,8/28/2024,Cust_22,Shipped,Home,1,449,10,20,Credit Card,439
+10023,12/20/2024,Cust_23,Completed,Clothing,4,479,15,15,UPI,1916
+10024,5/21/2024,Cust_24,Shipped,Electronics,3,490,15,15,PayPal,1470
+10025,10/17/2024,Cust_25,Cancelled,Books,2,109,5,5,PayPal,218
+10026,8/24/2024,Cust_26,Pending,Electronics,8,118,0,10,Debit Card,934
+10027,12/5/2024,Cust_27,Shipped,Books,9,352,0,20,Credit Card,3148
+10028,11/7/2024,Cust_28,Shipped,Home,2,182,10,5,Debit Card,369
+10029,6/25/2024,Cust_29,Completed,Home,14,246,5,15,UPI,3434
+10030,5/20/2024,Cust_30,Cancelled,Books,14,171,15,5,PayPal,2404
+10031,7/7/2024,Cust_31,Shipped,Books,4,402,10,10,PayPal,1608
+10032,2/18/2024,Cust_32,Completed,Books,6,225,5,20,Debit Card,1335
+10033,10/28/2024,Cust_33,Shipped,Home,11,273,0,10,UPI,2993
+10034,7/8/2024,Cust_34,Completed,Clothing,3,272,5,0,PayPal,821
+10035,5/15/2024,Cust_35,Completed,Electronics,8,301,0,20,UPI,2388
+10036,2/12/2024,Cust_36,Cancelled,Electronics,3,283,5,10,UPI,844
+10037,12/18/2024,Cust_37,Shipped,Home,14,12,10,15,Debit Card,163
+10038,3/30/2024,Cust_38,Cancelled,Electronics,13,37,0,20,Credit Card,461
+10039,10/21/2024,Cust_39,Completed,Books,13,335,10,20,Debit Card,4345
+10040,12/6/2024,Cust_40,Pending,Clothing,2,437,10,5,Credit Card,879
+10041,9/1/2024,Cust_41,Shipped,Electronics,13,158,0,15,UPI,2039
+10042,7/10/2024,Cust_42,Pending,Clothing,19,37,0,0,Credit Card,703
+10043,11/13/2024,Cust_43,Shipped,Books,6,497,15,10,UPI,2987
+10044,4/15/2024,Cust_44,Cancelled,Electronics,16,319,15,5,PayPal,5114
+10045,12/28/2024,Cust_45,Cancelled,Home,2,447,15,10,PayPal,899
+10046,11/5/2024,Cust_46,Cancelled,Clothing,8,74,10,0,PayPal,602
+10047,8/20/2024,Cust_47,Cancelled,Books,17,365,10,0,Debit Card,6215
+10048,9/21/2024,Cust_48,Cancelled,Clothing,2,30,15,20,Debit Card,55
+10049,12/9/2024,Cust_49,Pending,Electronics,10,261,10,0,UPI,2620
+10050,2/6/2024,Cust_50,Cancelled,Electronics,16,244,10,10,PayPal,3904
+10051,10/31/2024,Cust_51,Completed,Home,6,236,0,15,Debit Card,1401
+10052,2/10/2024,Cust_52,Completed,Books,2,22,0,15,PayPal,29
+10053,1/17/2024,Cust_53,Pending,Books,2,322,10,20,Debit Card,634
+10054,12/9/2024,Cust_54,Shipped,Home,13,58,15,10,Credit Card,759
+10055,10/3/2024,Cust_55,Completed,Home,15,127,5,10,Credit Card,1900
+10056,11/2/2024,Cust_56,Shipped,Books,2,63,15,0,PayPal,141
+10057,2/28/2024,Cust_57,Pending,Clothing,7,147,5,10,UPI,1024
+10058,7/1/2024,Cust_58,Shipped,Clothing,3,62,15,5,Debit Card,196
+10059,2/10/2024,Cust_59,Shipped,Home,8,53,0,0,Debit Card,424
+10060,2/8/2024,Cust_60,Shipped,Clothing,14,312,10,5,Credit Card,4373
+10061,7/10/2024,Cust_61,Shipped,Books,7,62,10,20,Credit Card,424
+10062,9/23/2024,Cust_62,Pending,Electronics,7,83,0,15,UPI,566
+10063,5/26/2024,Cust_63,Completed,Electronics,1,55,5,20,UPI,40
+10064,11/28/2024,Cust_64,Cancelled,Clothing,17,22,5,15,UPI,364
+10065,5/6/2024,Cust_65,Shipped,Home,9,174,5,20,PayPal,1551
+10066,2/15/2024,Cust_66,Completed,Home,13,111,0,10,Credit Card,1433
+10067,2/14/2024,Cust_67,Completed,Home,19,289,5,5,PayPal,5491
+10068,1/1/2024,Cust_68,Pending,Home,19,267,0,15,Credit Card,5058
+10069,6/16/2024,Cust_69,Completed,Home,17,479,15,0,Credit Card,8158
+10070,4/17/2024,Cust_70,Pending,Clothing,10,346,15,5,Debit Card,3470
+10071,1/19/2024,Cust_71,Shipped,Electronics,10,365,0,0,Credit Card,3650
+10072,11/27/2024,Cust_72,Shipped,Electronics,4,407,10,5,Credit Card,1633
+10073,3/12/2024,Cust_73,Cancelled,Clothing,8,147,15,5,PayPal,1186
+10074,4/18/2024,Cust_74,Cancelled,Home,18,172,5,20,Credit Card,3081
+10075,9/24/2024,Cust_75,Cancelled,Clothing,14,418,0,15,PayPal,5837
+10076,8/27/2024,Cust_76,Completed,Electronics,18,396,5,15,UPI,7118
+10077,10/27/2024,Cust_77,Shipped,Books,14,120,5,5,Credit Card,1680
+10078,3/30/2024,Cust_78,Pending,Clothing,15,111,10,10,Credit Card,1665
+10079,4/12/2024,Cust_79,Cancelled,Home,4,26,5,10,PayPal,99
+10080,9/6/2024,Cust_80,Pending,Electronics,13,277,10,0,UPI,3611
+10081,1/8/2024,Cust_81,Pending,Electronics,8,191,15,0,Debit Card,1543
+10082,6/1/2024,Cust_82,Cancelled,Electronics,18,381,0,20,UPI,6838
+10083,12/12/2024,Cust_83,Shipped,Electronics,12,33,5,5,PayPal,396
+10084,6/22/2024,Cust_84,Cancelled,Home,14,38,0,0,UPI,532
+10085,12/8/2024,Cust_85,Pending,Books,2,180,5,0,PayPal,365
+10086,6/6/2024,Cust_86,Cancelled,Electronics,18,418,0,5,PayPal,7519
+10087,8/2/2024,Cust_87,Pending,Clothing,2,237,5,20,Debit Card,459
+10088,6/25/2024,Cust_88,Pending,Books,11,387,5,0,Credit Card,4262
+10089,6/23/2024,Cust_89,Cancelled,Electronics,9,197,5,20,PayPal,1758
+10090,12/5/2024,Cust_90,Completed,Books,12,355,5,15,PayPal,4250
+10091,12/3/2024,Cust_91,Cancelled,Clothing,17,239,5,20,Debit Card,4048
+10092,5/25/2024,Cust_92,Completed,Electronics,15,330,5,10,PayPal,4945
+10093,11/19/2024,Cust_93,Pending,Clothing,17,349,5,10,Credit Card,5928
+10094,6/9/2024,Cust_94,Pending,Home,18,128,5,20,Debit Card,2289
+10095,5/6/2024,Cust_95,Completed,Electronics,6,165,5,10,Credit Card,985
+10096,3/22/2024,Cust_96,Pending,Electronics,17,281,0,15,Credit Card,4762
+10097,5/26/2024,Cust_97,Completed,Electronics,18,184,10,5,Debit Card,3317
+10098,8/26/2024,Cust_98,Completed,Electronics,8,474,5,10,PayPal,3787
+10099,3/24/2024,Cust_99,Pending,Home,9,113,10,10,Credit Card,1017
+10100,4/22/2024,Cust_100,Shipped,Electronics,6,101,5,20,Credit Card,591
+10101,8/12/2024,Cust_101,Completed,Books,5,195,5,15,Credit Card,965
+10102,11/27/2024,Cust_102,Cancelled,Electronics,12,469,0,5,Credit Card,5623
+10103,8/30/2024,Cust_103,Cancelled,Home,11,292,15,20,Debit Card,3207
+10104,5/22/2024,Cust_104,Pending,Electronics,1,190,15,20,Debit Card,185
+10105,2/10/2024,Cust_105,Shipped,Books,11,179,0,15,UPI,1954
+10106,9/14/2024,Cust_106,Pending,Home,19,196,10,5,UPI,3729
+10107,10/11/2024,Cust_107,Shipped,Home,9,184,15,15,Credit Card,1656
+10108,4/14/2024,Cust_108,Completed,Books,2,231,0,5,PayPal,457
+10109,7/20/2024,Cust_109,Completed,Books,12,242,0,15,Credit Card,2889
+10110,11/2/2024,Cust_110,Completed,Books,4,171,15,20,PayPal,679
+10111,11/26/2024,Cust_111,Completed,Books,4,430,10,20,Credit Card,1710
+10112,9/22/2024,Cust_112,Cancelled,Books,18,143,0,0,UPI,2574
+10113,7/28/2024,Cust_113,Cancelled,Home,15,400,5,10,UPI,5995
+10114,2/20/2024,Cust_114,Pending,Home,19,489,10,15,PayPal,9286
+10115,4/27/2024,Cust_115,Shipped,Electronics,13,233,10,0,Credit Card,3039
+10116,7/19/2024,Cust_116,Completed,Electronics,19,162,15,10,PayPal,3083
+10117,2/8/2024,Cust_117,Completed,Clothing,17,42,15,15,UPI,714
+10118,1/28/2024,Cust_118,Shipped,Electronics,6,64,5,5,Credit Card,384
+10119,9/15/2024,Cust_119,Shipped,Electronics,16,451,0,10,Credit Card,7206
+10120,3/24/2024,Cust_120,Pending,Books,12,16,15,20,PayPal,187
+10121,6/3/2024,Cust_121,Shipped,Books,19,253,15,0,Debit Card,4822
+10122,4/26/2024,Cust_122,Completed,Electronics,5,322,10,10,PayPal,1610
+10123,1/2/2024,Cust_123,Completed,Clothing,17,135,15,10,UPI,2300
+10124,4/2/2024,Cust_124,Completed,Books,1,21,15,20,UPI,16
+10125,6/14/2024,Cust_125,Completed,Electronics,10,25,15,15,UPI,250
+10126,12/15/2024,Cust_126,Completed,Electronics,15,217,15,5,UPI,3265
+10127,10/22/2024,Cust_127,Pending,Home,11,52,10,20,UPI,562
+10128,9/14/2024,Cust_128,Completed,Clothing,13,382,5,5,Debit Card,4966
+10129,3/21/2024,Cust_129,Pending,Home,5,493,5,15,Credit Card,2455
+10130,9/24/2024,Cust_130,Completed,Clothing,1,470,0,10,PayPal,460
+10131,8/22/2024,Cust_131,Cancelled,Books,12,144,15,5,PayPal,1738
+10132,11/16/2024,Cust_132,Cancelled,Clothing,11,237,10,0,UPI,2617
+10133,11/6/2024,Cust_133,Cancelled,Electronics,17,120,0,0,PayPal,2040
+10134,10/27/2024,Cust_134,Cancelled,Electronics,4,316,0,20,UPI,1244
+10135,12/22/2024,Cust_135,Pending,Clothing,15,466,5,15,Debit Card,6980
+10136,7/31/2024,Cust_136,Pending,Clothing,9,169,10,20,Debit Card,1511
+10137,3/2/2024,Cust_137,Shipped,Clothing,19,340,10,20,Credit Card,6450
+10138,2/18/2024,Cust_138,Completed,Home,19,273,10,20,Debit Card,5177
+10139,5/6/2024,Cust_139,Cancelled,Clothing,12,234,5,0,Debit Card,2813
+10140,8/10/2024,Cust_140,Pending,Books,5,480,5,0,Credit Card,2405
+10141,10/5/2024,Cust_141,Completed,Home,10,226,5,20,PayPal,2245
+10142,10/20/2024,Cust_142,Completed,Home,17,465,5,0,UPI,7910
+10143,10/10/2024,Cust_143,Pending,Clothing,5,54,5,15,UPI,260
+10144,10/3/2024,Cust_144,Cancelled,Books,16,223,15,20,PayPal,3563
+10145,4/16/2024,Cust_145,Shipped,Home,7,68,15,0,Credit Card,491
+10146,5/25/2024,Cust_146,Completed,Electronics,9,141,10,5,PayPal,1274
+10147,4/8/2024,Cust_147,Shipped,Home,3,113,0,20,Debit Card,319
+10148,3/13/2024,Cust_148,Cancelled,Clothing,15,204,10,20,Credit Card,3050
+10149,5/1/2024,Cust_149,Cancelled,Books,16,422,0,15,Credit Card,6737
+10150,1/30/2024,Cust_150,Shipped,Clothing,18,498,5,10,Credit Card,8959
