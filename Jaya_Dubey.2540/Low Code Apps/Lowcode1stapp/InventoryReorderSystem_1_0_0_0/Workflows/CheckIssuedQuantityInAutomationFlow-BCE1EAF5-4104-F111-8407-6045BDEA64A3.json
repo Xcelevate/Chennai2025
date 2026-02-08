@@ -1,0 +1,397 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "jadu_sharedcommondataserviceforapps_a88bf"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "jadu_sharedoffice365_4e912"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_approvals": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "std_sharedapprovals_e1b9b"
+        },
+        "api": {
+          "name": "shared_approvals"
+        }
+      },
+      "shared_office365_2": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "std_sharedoffice365_7d904"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "5b0e6126-9f27-4b70-8a30-6bd4723bb5fb"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 7,
+              "subscriptionRequest/entityname": "std_partsissued",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_a_row_by_ID": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "8704aecf-a929-4bed-897a-d4d1d5fb781d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "std_partses",
+              "recordId": "@triggerOutputs()?['body/_std_parts_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Send_an_email_(V2)": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "5362e7eb-42c2-4ed9-89dd-d6618d0a3db8"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "jaya.2540@xcelevate.org",
+                  "emailMessage/Subject": "Error: Issued Quantity exceeds current stock for @{outputs('Get_a_row_by_ID')?['body/std_partname']}",
+                  "emailMessage/Body": "<p>Dear User,<br>\n<br>\nThe transaction you tried to perform cannot be completed.<br>\n<strong>Issued Quantity:</strong> &nbsp;@{triggerOutputs()?['body/std_issuedquantity']}<br>\n<strong>Current Stock: &nbsp;</strong><strong>@{outputs('Get_a_row_by_ID')?['body/std_stockquantity']}</strong><strong></strong><br>\n<br>\n<strong>Error: </strong>Issued Quantity exceeds <strong>current </strong>stock. <strong>Transaction </strong>cannot be completed, Transaction <strong>Rejected.</strong><br>\n<br>\nPlease <strong>check and</strong> try again.<br>\n<br>\nRegards,<br>\n<strong>Inventory System</strong></p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Update_a_row_2": {
+              "runAfter": {
+                "Send_an_email_(V2)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ffa372f5-a33c-4191-8f26-c810daea289f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "std_partsissueds",
+                  "recordId": "@triggerOutputs()?['body/std_partsissuedid']",
+                  "item/std_statusofissues": 924350002
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Get_a_row_by_ID": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Update_a_row": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "d370c652-a024-437b-8f37-6437caaeff3a"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "std_partses",
+                    "recordId": "@triggerOutputs()?['body/_std_parts_value']",
+                    "item/std_stockquantity": "@sub(int(outputs('Get_a_row_by_ID')?['body/std_stockquantity']),int(triggerOutputs()?['body/std_issuedquantity']))"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "greater": [
+              "@int(triggerOutputs()?['body/std_issuedquantity'])",
+              "@int(outputs('Get_a_row_by_ID')?['body/std_stockquantity'])"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4d9f756d-d989-4c3b-a9f1-589be469cd0c"
+          },
+          "type": "If"
+        },
+        "Condition_2": {
+          "actions": {
+            "Add_a_new_row": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "cc5bd805-32d8-4cab-a135-ade0357991d4"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "std_stockrequestses",
+                  "item/std_requestquantity": "@outputs('Update_a_row')?['body/std_orderquantity']",
+                  "item/std_approvaldate": "@null",
+                  "item/std_managercomments": "Pending Approval.",
+                  "item/std_notificationsent": false,
+                  "item/std_Parts@odata.bind": "@outputs('Update_a_row_2')?['body/_std_parts_value']",
+                  "item/std_requestdate": "@utcNow()",
+                  "item/std_restockrequestnumber": "REQ-100",
+                  "item/std_status": 924350000,
+                  "item/std_suppliername": "Baby Jha"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Condition": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "lessOrEquals": [
+              "@coalesce(outputs('Get_a_row_by_ID')?['body/StockQuantity'],0)",
+              "@coalesce(outputs('Get_a_row_by_ID')?['body/MinimumStockQuantity'],0)"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "df43b505-1b4f-4ec8-bad4-0e1812f6c4f5"
+          },
+          "type": "If"
+        },
+        "Start_and_wait_for_an_approval": {
+          "runAfter": {
+            "Condition_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ab98e52f-847e-47fd-8461-6136fb017651"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_approvals",
+              "operationId": "StartAndWaitForAnApproval",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals"
+            },
+            "parameters": {
+              "approvalType": "Basic",
+              "WebhookApprovalCreationInput/title": "Restock Request for: @{outputs('Get_a_row_by_ID')?['body/std_partname']}",
+              "WebhookApprovalCreationInput/assignedTo": "jayadubey03may2003@gmail.com;",
+              "WebhookApprovalCreationInput/details": "The stock for @{outputs('Get_a_row_by_ID')?['body/std_partname']} has fallen below the threshold. We need to order @{outputs('Update_a_row')?['body/std_orderquantity']} units.",
+              "WebhookApprovalCreationInput/itemLink": "@outputs('Add_a_new_row')?['body/@odata.id']",
+              "WebhookApprovalCreationInput/enableNotifications": true,
+              "WebhookApprovalCreationInput/enableReassignment": true
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition_3": {
+          "actions": {
+            "Send_an_email_(V2)_2": {
+              "runAfter": {
+                "Apply_to_each_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "02bb40fa-7bb7-4375-ad1d-b359f284b8a9"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "jaya.2540@xcelevate.org",
+                  "emailMessage/Subject": "New Purchase Order: @{outputs('Get_a_row_by_ID')?['body/std_partname']}",
+                  "emailMessage/Body": "<p>Please supply @{outputs('Get_a_row_by_ID')?['body/std_orderquantity']} of @{outputs('Get_a_row_by_ID')?['body/std_partname']}. This request has been approved by our <strong>Warehouse Manager</strong>.</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Apply_to_each_2": {
+              "foreach": "@outputs('Start_and_wait_for_an_approval')?['body/responses']",
+              "actions": {
+                "Update_a_row_3": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "3a7d9558-94a3-40fd-bfd5-a99f7ba9e393"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "std_stockrequestses",
+                      "recordId": "@outputs('Add_a_new_row')?['body/@odata.id']",
+                      "item/std_managercomments": "@items('Apply_to_each_2')?['comments']",
+                      "item/std_status": 924350001
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9e82d1f7-77ad-44aa-803f-5dcd1a8325a7"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Start_and_wait_for_an_approval": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Apply_to_each": {
+                "foreach": "@outputs('Start_and_wait_for_an_approval')?['body/responses']",
+                "actions": {
+                  "Update_a_row_4": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "36a8758d-366a-4fd1-9ad1-655ec478a0bd"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "std_stockrequestses",
+                        "recordId": "@outputs('Add_a_new_row')?['body/@odata.id']",
+                        "item/std_managercomments": "@items('Apply_to_each')?['comments']",
+                        "item/std_status": 924350002
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  },
+                  "Send_an_email_(V2)_3": {
+                    "runAfter": {
+                      "Update_a_row_4": [
+                        "Succeeded"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "b3297283-d7e7-43ae-acbf-5cbe99ee71ea"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_office365_2",
+                        "operationId": "SendEmailV2",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                      },
+                      "parameters": {
+                        "emailMessage/To": "jaya.2540@xcelevate.org",
+                        "emailMessage/Subject": "Restock Request Rejected",
+                        "emailMessage/Body": "<p>Your restock request was rejected. Manager's reason: @{items('Apply_to_each')?['comments']}.</p>",
+                        "emailMessage/Importance": "Normal"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "1d360db3-43b6-4f76-a7f7-1c0ac1ef0975"
+                },
+                "type": "Foreach"
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@outputs('Start_and_wait_for_an_approval')?['body/outcome']",
+              "Approve"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "631613e0-205c-49d1-b03c-fe42e5860992"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
