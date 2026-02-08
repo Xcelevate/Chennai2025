@@ -1,0 +1,2 @@
+fm_last_odometer_vehicle: =fm_Vehicle.fm_lastodometerreading
+fm_mileage: =(fm_current_odometer_reading-fm_last_odometer_vehicle)/fm_fuel_quantity
