@@ -1,0 +1,123 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "as_sharedcommondataserviceforapps_6792d"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "xc_sharedoffice365_4af62"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "c4b579ad-497e-4515-8ede-8ef4d64fdfd9"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "as_waste_collection",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Condition": {
+          "actions": {
+            "Send_an_email_(V2)": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "613592a2-7419-4ddb-8dad-428639e4b555"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "aswin.2539@xcelevate.org",
+                  "emailMessage/Subject": "🚨 Special Handling Required – Metal Waste Above 500kg",
+                  "emailMessage/Body": "<p>Dear Plant Manager,<br>\n<br>\nA high-volume collection of metal waste has been logged and requires immediate action.<br>\n<br>\nCollection ID:<br>\nAgent Name:@{triggerOutputs()?['body/as_agent_name']}<br>\nWaste Type:@{triggerOutputs()?['body/as_waste_type']} ( Metal)<br>\nWeight: @{triggerOutputs()?['body/as_weightinkg']}⚠️ EXCEEDS 500 KG LIMIT<br>\nCollection Date:@{triggerOutputs()?['body/as_collection_date']}<br>\nLocation: @{triggerOutputs()?['body/as_location']}<br>\n<br>\n<br>\nThe agent has collected more than 500 kg of metal in a single day.<br>\nPlease ensure necessary special handling actions are taken.<br>\n<br>\n<br>\nBest regards,<br>\nWaste Management Support team</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {
+              "Terminate": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "ef645219-7626-4533-a5a8-a1895543b2b1"
+                },
+                "type": "Terminate",
+                "inputs": {
+                  "runStatus": "Succeeded"
+                }
+              }
+            }
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/as_waste_type']",
+                  120980000
+                ]
+              },
+              {
+                "greater": [
+                  "@triggerOutputs()?['body/as_weightinkg']",
+                  500
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a2fedbc6-f034-4e11-98f2-6a28d2434f93"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
