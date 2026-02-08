@@ -1,0 +1,85 @@
+name: Java CI with Maven
+
+# Trigger workflow on push or pull request to main branch
+on:
+  push:
+    branches: [ "main","feature/test" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  feature-build:
+    if: github.ref_name != 'main'
+    runs-on: ubuntu-latest # runner
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # 1️⃣ Checkout your repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          clean: false
+
+      # 2️⃣ Set up Java
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3️⃣ Build and run tests with Maven
+      - name: Compile and Test
+        run: mvn clean test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4️⃣ Upload JaCoCo coverage report (optional)
+      #- name: Upload JaCoCo coverage report
+       # uses: actions/upload-artifact@v4
+        #with:
+        # name: jacoco-coverage-report
+        #path: target/site/jacoco
+
+  main-build:
+    if: github.ref_name == 'main'
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # 1️⃣ Checkout your repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          clean: false
+
+      # 2️⃣ Set up Java
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3️⃣ Build and run tests with Maven
+      - name: Compile and Test
+        run: mvn clean deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4️⃣ Upload JaCoCo coverage report (optional)
+      - name: Upload JaCoCo coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-coverage-report
+          path: target/site/jacoco
+
+
+

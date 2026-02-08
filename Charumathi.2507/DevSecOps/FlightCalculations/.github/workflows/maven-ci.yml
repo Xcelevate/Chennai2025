@@ -1,0 +1,35 @@
+name: Java CI with Maven
+
+# Trigger workflow on push or pull request to main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout your repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Java
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # change to your Java version
+          distribution: 'temurin'
+
+      # 3️⃣ Build and run tests with Maven
+      - name: Build with Maven
+        run: mvn clean verify
+
+      # 4️⃣ Upload JaCoCo coverage report (optional)
+      - name: Upload JaCoCo Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/

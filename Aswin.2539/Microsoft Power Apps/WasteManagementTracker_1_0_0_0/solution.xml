@@ -1,0 +1,109 @@
+<ImportExportXml version="9.2.26014.145" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26014.145" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26014.00145">
+  <SolutionManifest>
+    <UniqueName>WasteManagementTracker</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Waste Management Tracker" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Aswin</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Aswin" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>as</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>12098</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="as_agent_details" behavior="0" />
+      <RootComponent type="1" schemaName="as_waste_collection" behavior="0" />
+      <RootComponent type="1" schemaName="as_waste_process" behavior="0" />
+      <RootComponent type="29" id="{5e0b050d-b204-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="29" id="{7362564b-2404-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="29" id="{8e0c5817-ea04-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="29" id="{9e52a43d-a804-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="29" id="{a44d3683-e004-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="29" id="{c77b93dc-4104-f111-8407-000d3aca4dd6}" behavior="0" />
+      <RootComponent type="61" schemaName="as_recycle" behavior="0" />
+      <RootComponent type="62" schemaName="as_WasteManagementforPlantManager" behavior="0" />
+      <RootComponent type="80" schemaName="as_WasteManagementforPlantManager" behavior="0" />
+      <RootComponent type="300" schemaName="as_wastemanagementtracker_98042" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="ServiceLevelAgreement/Sla/msdyn_SLAWebClientDeprecationAckDialog.html" displayName="ServiceLevelAgreement/Sla/msdyn_SLAWebClientDeprecationAckDialog.html" solution="msdynce_ServiceLevelAgreement (9.0.26013.1003)">
+          <package appName="msdynce_ServiceLevelAgreement" version="9.0.26013.1003">msdynce_ServiceLevelAgreementAnchor (9.0.26013.1003)</package>
+        </Required>
+        <Dependent type="80" schemaName="as_WasteManagementforPlantManager" displayName="Waste Management for Plant Manager" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=as_WasteManagementforPlantManager,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="as_WasteManagementforPlantManager" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>
