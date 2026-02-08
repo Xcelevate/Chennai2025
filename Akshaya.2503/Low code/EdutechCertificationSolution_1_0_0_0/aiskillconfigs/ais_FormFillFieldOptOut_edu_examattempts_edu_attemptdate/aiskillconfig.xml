@@ -1,0 +1,15 @@
+<aiskillconfig uniquename="ais_FormFillFieldOptOut_edu_examattempts_edu_attemptdate">
+  <aiskill>FormFillFieldOptOut</aiskill>
+  <attribute>
+    <entityid.logicalname>edu_examattempts</entityid.logicalname>
+    <logicalname>edu_attemptdate</logicalname>
+  </attribute>
+  <description>edu_ExamAttempts - Attempt date Form fill opt out</description>
+  <entity>
+    <logicalname>edu_examattempts</logicalname>
+  </entity>
+  <iscustomizable>1</iscustomizable>
+  <scope>1</scope>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</aiskillconfig>
