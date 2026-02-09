@@ -1,0 +1,109 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "rpvl_sharedcommondataserviceforapps_40b99"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_abe78"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "43a51e17-5ff4-4d05-a179-32b4396f82d4"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "pe_booking",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "23071b3a-8c77-4aae-9735-3eb855a109af"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "@triggerOutputs()?['body/pe_clientemail']",
+              "emailMessage/Subject": "Your booking request has been received",
+              "emailMessage/Body": "<p>Dear @{triggerOutputs()?['body/pe_clientname']},<br>\n<br>\nThank you for your booking request.<br>\n<br>\nHere are your booking details:<br>\nHall: @{triggerOutputs()?['body/_pe_hall_value@Microsoft.Dynamics.CRM.lookuplogicalname']} Party hall<br>\nStart Time: @{triggerOutputs()?['body/pe_startdatetime']}<br>\nEnd Time: @{triggerOutputs()?['body/pe_enddatetime']}<br>\n<br>\nOur team will review and confirm your booking shortly.<br>\n<br>\nRegards,<br>\nVenue Booking Team<br>\n</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Send_an_email_(V2)_2": {
+          "runAfter": {
+            "Send_an_email_(V2)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0a2f7938-2440-4ea6-aae0-f9a2b240eaf2"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "vishnu.2538@xcelevate.org",
+              "emailMessage/Subject": "New Booking Created",
+              "emailMessage/Body": "<p>A new booking has been created.<br>\n<br>\nClient: @{triggerOutputs()?['body/pe_clientname']}<br>\nHall:  @{triggerOutputs()?['body/_pe_hall_value@Microsoft.Dynamics.CRM.lookuplogicalname']} Party Hall<br>\nTime: @{triggerOutputs()?['body/pe_startdatetime']} to @{triggerOutputs()?['body/pe_enddatetime']}<br>\n<br>\nPlease review in the system.</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
