@@ -1,0 +1,456 @@
+2026-01-17 18:58:59 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 18:59:01 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 18:59:01 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 18:59:02 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 18:59:02 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 18:59:02 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 18:59:02 WARN  [main] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2026-01-17 18:59:02 ERROR [main] o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john.new@example.com' for key 'jpastudents.UKqbemexun55helmgqnh5linq5d'
+2026-01-17 18:59:08 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 18:59:09 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 18:59:10 WARN  [main] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2026-01-17 18:59:10 ERROR [main] o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john.doe@example.com' for key 'jpastudents.UKqbemexun55helmgqnh5linq5d'
+2026-01-17 18:59:29 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 18:59:31 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 18:59:31 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 18:59:31 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    delete 
+    from
+        JPAStudents 
+    where
+        id=?
+2026-01-17 18:59:32 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:03:12 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:03:14 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:03:14 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:03:14 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:03:14 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:03:14 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 19:03:14 WARN  [main] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2026-01-17 19:03:14 ERROR [main] o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john.new@example.com' for key 'jpastudents.UKqbemexun55helmgqnh5linq5d'
+2026-01-17 19:03:25 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:03:26 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:03:26 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    delete 
+    from
+        JPAStudents 
+    where
+        id=?
+2026-01-17 19:03:27 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:05:19 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:05:21 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:05:21 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:05:22 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:05:22 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:05:22 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 19:05:22 WARN  [main] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2026-01-17 19:05:22 ERROR [main] o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john.new@example.com' for key 'jpastudents.UKqbemexun55helmgqnh5linq5d'
+2026-01-17 19:05:29 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:05:32 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:05:32 WARN  [main] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2026-01-17 19:05:32 ERROR [main] o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john.doe@example.com' for key 'jpastudents.UKqbemexun55helmgqnh5linq5d'
+2026-01-17 19:05:44 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    delete 
+    from
+        JPAStudents 
+    where
+        id=?
+2026-01-17 19:05:46 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:09:51 WARN  [main] o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-01-17 19:09:52 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:09:52 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        JPAStudents
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    update
+        JPAStudents 
+    set
+        email=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0 
+    where
+        s1_0.id=?
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    delete 
+    from
+        JPAStudents 
+    where
+        id=?
+2026-01-17 19:09:53 DEBUG [main] org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        JPAStudents s1_0
