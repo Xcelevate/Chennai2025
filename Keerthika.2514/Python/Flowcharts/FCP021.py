@@ -1,0 +1,12 @@
+a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+e=int(input())
+f=int(input())
+g=int(input())
+h=int(input())
+number=[a,b,c,d,e,f,g,h]
+numbers=list(set(number))
+numbers.sort()
+print(numbers[-2])
